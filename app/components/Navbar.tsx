@@ -1,15 +1,18 @@
+"use client";
 import Link from "next/link";
 import Button from "./Button";
 import { ShoppingCart } from "lucide-react";
+import BrandName from "./BrandName";
+import { useState } from "react";
+import Cart from "./Cart";
 
 const Navbar = () => {
+  const [openCart, setOpenCart] = useState(false);
   return (
     <nav className='flex justify-between items-center px-8 md:px-12 py-6 border-b-2 border-light'>
       {/* Logo */}
       <Link href='/' className='font-extrabold text-2xl tracking-tighter'>
-        <span className='text-primary'>N</span>awab{" "}
-        <span className='text-primary'>F</span>ashion{" "}
-        <span className='text-primary'>G</span>arments
+        <BrandName />
       </Link>
 
       {/* Menu */}
@@ -29,14 +32,9 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link
-            href='/testimonials'
-            className='hover:text-primary transition-all focus:outline-none focus:text-primary hover:underline'>
-            Testimonials
-          </Link>
-        </li>
-        <li>
-          <button className='relative hover:text-primary transition-all'>
+          <button
+            className='relative hover:text-primary transition-all'
+            onClick={() => setOpenCart(true)}>
             <ShoppingCart size={24} />
 
             {/* Badge */}
@@ -44,6 +42,9 @@ const Navbar = () => {
               0
             </span>
           </button>
+          {openCart && (
+            <Cart isOpen={openCart} onClose={() => setOpenCart(false)} />
+          )}
         </li>
         <li>
           <Button title='Contact Us' link='/contact' />
