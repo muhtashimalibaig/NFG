@@ -8,21 +8,21 @@ export default function Products() {
       title: "Cozy Light Blue Hoodie",
       description:
         "Stay warm and stylish with this soft, light blue hoodie made from premium cotton. Perfect for casual outings or lounging at home.",
-      price: 120,
+      price: 2350,
       image: product1,
     },
     {
       title: "Sleek Black Leather Jacket",
       description:
         "Elevate your style with this black leather jacket featuring quilted padding for a modern and edgy look. Ideal for evenings and outings.",
-      price: 80,
+      price: 2450,
       image: product2,
     },
     {
       title: "Khaki Cargo Pants",
       description:
         "Versatile khaki cargo pants with multiple pockets, designed for comfort and everyday wear. Perfect for casual and adventure-ready outfits.",
-      price: 250,
+      price: 2800,
       image: product3,
     },
   ];
@@ -36,6 +36,7 @@ export default function Products() {
         {data.map((product, index) => (
           <ProductCard
             key={index}
+            id={index}
             title={product.title}
             description={product.description}
             price={product.price}
