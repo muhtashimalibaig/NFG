@@ -75,14 +75,14 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-2/3 bg-white shadow-lg transform transition-transform duration-300 md:hidden flex flex-col p-6 gap-6 z-10 ${
+        className={`fixed top-0 right-0 h-full w-2/3 bg-white shadow-lg transform transition-transform duration-300 md:hidden flex flex-col p-6 gap-6 z-20 ${
           mobileMenu ? "translate-x-0" : "translate-x-full"
         }`}>
-        {/* <button
+        <button
           className='flex justify-end'
           onClick={() => setMobileMenu(false)}>
           <X />
-        </button> */}
+        </button>
         <Link href='/about' className='hover:text-primary'>
           About
         </Link>
