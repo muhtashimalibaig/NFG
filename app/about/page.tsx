@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -55,9 +56,11 @@ const About = () => {
             </li>
           </ul>
 
-          <button className='mt-6 sm:mt-8 bg-primary text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-transparent hover:border-2 hover:border-primary hover:text-black transition w-full sm:w-auto'>
+          <Link
+            href={"/products"}
+            className='mt-6 inline-block sm:mt-8 bg-primary text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-transparent hover:border-2 hover:border-primary hover:text-black transition w-full sm:w-auto'>
             Explore Our Collection
-          </button>
+          </Link>
         </div>
       </div>
     </section>

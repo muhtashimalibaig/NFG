@@ -49,7 +49,7 @@ const HotProduct = () => {
 
           <Button
             title='View All Products'
-            link='/'
+            link='/products'
             className='mt-6 inline-block'
           />
         </div>

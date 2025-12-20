@@ -3,6 +3,7 @@ import BannerImage from "../../public/Banner.jpg";
 import BrandName from "./BrandName";
 import Button from "./Button";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -31,12 +32,12 @@ const Banner = () => {
         <div className='flex flex-col sm:flex-row gap-4 sm:gap-5 mt-6'>
           <Button
             title='Shop Now'
-            link='/'
+            link='/products'
             className='bg-primary hover:text-white text-white hover:bg-primary/90 transition-colors font-semibold px-8 py-3 sm:px-10 sm:py-3 rounded-lg'
           />
-          <button className='border border-white flex items-center justify-center gap-2 text-white px-8 py-3 sm:px-10 sm:py-3 hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary transition-colors font-semibold rounded-lg'>
+          <Link href={'/about'} className='border border-white flex items-center justify-center gap-2 text-white px-8 py-3 sm:px-10 sm:py-3 hover:bg-transparent hover:border-2 hover:border-primary hover:text-primary transition-colors font-semibold rounded-lg'>
             Explore More <ChevronRight size={18} />
-          </button>
+          </Link>
         </div>
       </div>
     </div>
