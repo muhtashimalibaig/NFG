@@ -3,54 +3,58 @@ import Image from "next/image";
 import hotProductImage from "../../public/ChatGPT Image Oct 26, 2025, 12_32_44 AM.png";
 import BrandName from "./BrandName";
 import Button from "./Button";
+
 const HotProduct = () => {
   return (
-    <>
-      <div className='my-32 px-32'>
-        <h1 className='text-3xl font-bold tracking-tighter text-center'>
-          Hot Product Component
-        </h1>
-        <div className='flex gap-10 mt-10'>
-          {/* Left Image Section */}
-          <div className='relative'>
-            <Image
-              src={hotProductImage}
-              alt='Hot Image'
-              className='w-[600px] h-[600px] object-cover'
-            />
-            <span className='absolute top-2.5 left-2 bg-orange-500 text-white font-bold tracking-tighter px-2 py-1 rounded-full'>
-              Hot Offer
-            </span>
+    <div className='my-16 md:my-32 px-4 md:px-12 lg:px-32'>
+      {/* Heading */}
+      <h1 className='text-2xl sm:text-3xl font-bold tracking-tighter text-center'>
+        Hot Product Component
+      </h1>
+
+      {/* Main Content */}
+      <div className='flex flex-col lg:flex-row gap-8 lg:gap-10 mt-10 items-center lg:items-start'>
+        {/* Left Image Section */}
+        <div className='relative w-full sm:max-w-md lg:max-w-[600px]'>
+          <Image
+            src={hotProductImage}
+            alt='Hot Image'
+            className='w-full h-auto sm:h-[640px] object-cover rounded-lg'
+          />
+          <span className='absolute top-2.5 left-2 bg-orange-500 text-white font-bold tracking-tighter px-2 py-1 rounded-full text-sm sm:text-base'>
+            Hot Offer
+          </span>
+        </div>
+
+        {/* Right Content Section */}
+        <div className='flex-1'>
+          <h2 className='text-xl sm:text-2xl md:text-3xl font-semibold tracking-tighter'>
+            Premium Black Leather Puffer Jacket – Winter Collection |{" "}
+            <BrandName />
+          </h2>
+
+          <div className='mt-5 text-gray-700 space-y-3'>
+            <h4 className='text-primary font-bold'>Our Features:</h4>
+            <ul className='list-disc list-inside space-y-1'>
+              <li>High-quality faux leather material for a premium look</li>
+              <li>Comfortable padded body for winter warmth</li>
+              <li>Stylish zip-closure with smooth and durable zipper</li>
+              <li>Soft inner lining for a cozy experience</li>
+              <li>Ribbed cuffs and waistband for a snug fit</li>
+              <li>Two secure zip pockets for essentials</li>
+              <li>Trendy black color suitable for all outfits</li>
+              <li>Lightweight yet warm — perfect for everyday winter wear</li>
+            </ul>
           </div>
-          {/* Right Content Section */}
-          <div>
-            <h1 className='text-2xl font-semibold tracking-tighter'>
-              Premium Black Leather Puffer Jacket – Winter Collection|
-              <br />
-              <BrandName />
-            </h1>
-            <p className='mt-5 text-gray-700'>
-              <h4 className='text-primary font-bold'>Our Features:</h4>
-              <ul className='list-disc'>
-                <li>High-quality faux leather material for a premium look</li>
-                <li>Comfortable padded body for winter warmth</li>
-                <li>Stylish zip-closure with smooth and durable zipper</li>
-                <li>Soft inner lining for a cozy experience</li>
-                <li>Ribbed cuffs and waistband for a snug fit</li>
-                <li>Two secure zip pockets for essentials</li>
-                <li>Trendy black color suitable for all outfits</li>
-                <li>Lightweight yet warm — perfect for everyday winter wear</li>
-              </ul>
-            </p>
-            <Button
-              title='View All Products'
-              link='/'
-              className='mt-7 inline-block'
-            />
-          </div>
+
+          <Button
+            title='View All Products'
+            link='/'
+            className='mt-6 inline-block'
+          />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -80,8 +80,8 @@ const Footer = () => {
         <div>
           <h3 className='font-semibold text-lg mb-3'>Contact Us</h3>
           <ul className='text-gray-300 space-y-2 text-sm'>
-            <li className='flex items-center gap-2'>
-              <Phone size={18} /> +92 300 1234567
+            <li className='flex items-center gap-2 line-clamp-1'>
+              <Phone size={18} /> +92 309 6372410 - (Nawab Ahmed)
             </li>
             <li className='flex items-center gap-2'>
               <Mail size={18} /> support@nfgfashion.com

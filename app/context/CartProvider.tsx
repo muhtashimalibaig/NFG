@@ -1,25 +1,37 @@
 "use client";
-import { useState, useMemo } from "react";
+
+import { useState, useEffect, useMemo } from "react";
 import CartContext, { CartItem } from "./CartContext";
 
 const CartProvider = ({ children }: { children: React.ReactNode }) => {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  // Initialize cart from localStorage
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    if (typeof window !== "undefined") {
+      const storedCart = localStorage.getItem("cart");
+      return storedCart ? JSON.parse(storedCart) : [];
+    }
+    return [];
+  });
 
-  // ✅ ADD TO CART (only once)
+  // Persist cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+  // Add item to cart (only once)
   const addToCart = (product: CartItem) => {
     setCart((prev) => {
-      const exist = prev.find((item) => item.id === product.id);
-      if (exist) return prev; // ❌ already added
+      if (prev.some((item) => item.id === product.id)) return prev;
       return [...prev, product];
     });
   };
 
-  // ❌ REMOVE ITEM
+  // Remove item from cart
   const removeFromCart = (id: number) => {
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
-  // ✅ TOTAL PRICE (simple)
+  // Calculate total price
   const total = useMemo(
     () => cart.reduce((sum, item) => sum + item.price, 0),
     [cart]

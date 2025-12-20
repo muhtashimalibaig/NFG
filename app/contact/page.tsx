@@ -21,11 +21,11 @@ const Contact = () => {
             </div>
             <div className='flex items-center gap-4 text-gray-700'>
               <Phone className='w-6 h-6 text-primary' />
-              <span>+92 300 1234567</span>
+              <span>+92 309 6372410 - (Nawab Ahmed)</span>
             </div>
             <div className='flex items-center gap-4 text-gray-700'>
               <MapPin className='w-6 h-6 text-primary' />
-              <span>Karachi, Pakistan</span>
+              <span>Lahore, Pakistan</span>
             </div>
           </div>
         </div>

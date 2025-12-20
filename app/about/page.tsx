@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section className='text-black py-16 px-6 md:px-20'>
+    <section className='text-black py-16 px-4 sm:px-6 md:px-20'>
       <div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
         {/* Left Image Section */}
-        <div className='relative w-full h-full rounded-lg overflow-hidden shadow-xl'>
+        <div className='relative w-full h-64 sm:h-80 md:h-96 lg:h-[28rem] rounded-lg overflow-hidden shadow-xl'>
           <Image
             src='/Banner.jpg'
             alt='NFG Fashion'
@@ -17,11 +17,11 @@ const About = () => {
 
         {/* Right Text Section */}
         <div>
-          <h2 className='text-3xl md:text-4xl font-bold text-primary mb-4'>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4'>
             About NFG
           </h2>
 
-          <p className='text-gray-700 leading-relaxed mb-4'>
+          <p className='text-gray-700 leading-relaxed mb-4 text-sm sm:text-base'>
             Welcome to{" "}
             <span className='font-semibold'>Nawab Fashion Garments (NFG)</span>{" "}
             — your destination for modern, stylish and premium men’s clothing.
@@ -29,14 +29,14 @@ const About = () => {
             appearance and long-lasting quality.
           </p>
 
-          <p className='text-gray-700 leading-relaxed mb-6'>
+          <p className='text-gray-700 leading-relaxed mb-6 text-sm sm:text-base'>
             From seasonal collections to trending outfits, our mission is to
             keep you looking sharp with confidence. Whether it's winter wear,
             casual daily fit or festive fashion — NFG ensures fresh style and
             unmatched value.
           </p>
 
-          <ul className='space-y-3 text-gray-800'>
+          <ul className='space-y-3 text-gray-800 text-sm sm:text-base'>
             <li className='flex gap-2'>
               <span className='text-primary font-bold'>✔</span> Premium fabrics
               & durable stitching
@@ -55,7 +55,7 @@ const About = () => {
             </li>
           </ul>
 
-          <button className='mt-8 bg-primary text-white px-8 py-2 rounded-full hover:bg-transparent hover:border-2 hover:border-primary hover:text-black transition'>
+          <button className='mt-6 sm:mt-8 bg-primary text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-transparent hover:border-2 hover:border-primary hover:text-black transition w-full sm:w-auto'>
             Explore Our Collection
           </button>
         </div>
